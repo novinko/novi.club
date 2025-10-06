@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoviClub Contacts</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: url('lilies-background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    perspective: 1000px;
+    color: white;
+  }
+
+  .container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 30px 40px;
+    border-radius: 14px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 14px 28px;
+    width: 230px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #423e3b;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #2f2c2a;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 15px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+</style>
+</head>
+<body>
+  <div class="container" id="card">
+    <h1>Контакты</h1>
+    <a href="https://t.me/ni_novi1" class="btn" target="_blank">Написать в Telegram</a>
+    <a href="https://vk.com/novi.club" class="btn" target="_blank">ВКонтакте</a>
+    <a href="tel:+79874060762" class="btn">Позвонить</a>
+  </div>
+  <footer>© NoviClub | Фокусник Никита Новиков</footer>
+
+  <script>
+    const card = document.getElementById('card');
+    document.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+</body>
+</html>
